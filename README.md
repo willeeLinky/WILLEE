@@ -66,8 +66,8 @@ Dans le cas contraire, vérifiez les branchements.
 ## Etape 3 : Installation du projet
 Créer un dossier appelé WILLEE et se placer dedans:
 
-	mkdir WILLEEProject #utile ?
-	cd WILLEEProject #utile ?
+	mkdir WilleeProject 
+	cd WilleeProject
 Cloner le projet et se placer dans le dossier.
 
 	git clone https://github.com/willeeLinky/WILLEE.git
