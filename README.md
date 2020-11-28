@@ -72,7 +72,7 @@ Cloner le projet et se placer dans le dossier.
 
 	git clone https://github.com/willeeLinky/WILLEE.git
 	cd WILLEE
-Installer les librairies python (cela peut prendre du temps) :
+Installer les librairies python (cela peut prendre du temps). L'usage du `sudo` est requis pour l'étape 4 (optionnelle).
 
 	sudo pip3 install -r requirements.txt
 Lancer le *backend* de WILLEE, qui remplit la base de données :
