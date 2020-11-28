@@ -70,7 +70,7 @@ Créer un dossier appelé WILLEE et se placer dedans:
 	cd WILLEEProject #utile ?
 Cloner le projet et se placer dans le dossier.
 
-	git clone https://github.com/GaelSim/Link.git
+	git clone https://github.com/willeeLinky/WILLEE.git
 	cd WILLEE
 Installer les librairies python (cela peut prendre du temps) :
 
