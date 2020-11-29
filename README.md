@@ -28,8 +28,8 @@ WILLEE est codé en langage Python et hébergé sur une carte Raspberry Pi.
 * **L'adapteur d'impédance est bien connecté au compteur Linky.** 
 * **La Raspberry Pi est correctement connectée à internet (Wifi).**
 * **L'heure de la Raspberry Pi est juste.** (vous êtes au moins sur le bon fuseau horaire).
-	* Pour vérifier : timedatectl
-	* Pour modifier : sudo dpkg-reconfigure tzdata
+	* Pour vérifier : `timedatectl`
+	* Pour modifier : `sudo dpkg-reconfigure tzdata`
 * Si tout est branché correctement comme sur le schéma dessous, c'est parti !
 
 ![Image](screenshots/schemaMontage.png?raw=true)
@@ -54,7 +54,7 @@ Ensuite, dans le fichier `/boot/cmdline.txt`, on doit voir quelque chose du genr
 	dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes root wait. 
 
 Retirer la partie `console=serial0,115200` de la ligne en question (utiliser `sudo nano /boot/cmdline.txt` ; *CTRL+O* pour sauvegarder ; *CTRL+X* pour quitter).
-Rebooter pour prendre en compte tous les changements :
+Rebooter la Rapsberry Pi pour prendre en compte tous les changements :
 
 	sudo reboot
 Essayez maintenant de lire les infos du compteur grâce au petit logiciel *picocom* installé dans l'étape 1 (ctrl+A+X pour quitter).
@@ -68,11 +68,11 @@ Si vous obtenez quelque chose de similaire, vous pouvez passer à l'étape suiva
 Dans le cas contraire, vérifiez les branchements.
 
 ## Etape 3 : Installation du projet
-Créer un dossier appelé WILLEE et se placer dedans:
+Créer un dossier appelé WILLEE et se placer dedans :
 
 	mkdir WilleeProject 
 	cd WilleeProject
-Cloner le projet et se placer dans le dossier.
+Cloner le projet et se placer dans le dossier :
 
 	git clone https://github.com/willeeLinky/WILLEE.git
 	cd WILLEE
@@ -83,7 +83,7 @@ Lancer le *backend* de WILLEE, qui remplit la base de données :
 
 	sudo python3 backend.py & 
 	
-La base de données est créée automatiquement, ainsi que les tables (taper `ls -lah` pour la voir dans le dossier).
+La base de données *SQLite3* est créée automatiquement, ainsi que les tables (taper `ls -lah` pour voir la base de données dans le dossier).
 Lancer le *frontend* qui génère la page web :
 	
 	sudo python3 frontend.py & 
@@ -92,18 +92,18 @@ WILLEE va accumuler des donnée à raison d'environ ~600Mo/an.
 Vous pouvez visualiser la page web depuis la Raspberry Pi ou un autre équipement connecté au réseau local en tapant "*[IP de la Raspberry Pi]:8050*" dans un navigateur.
 Pour connaitre l'IP : `ip addr` dans l'invité de commande, puis chercher quelque chose du genre "*inet 192.168.1.2/24*".
 
-Il est normal que rien ne soit affiché sur le second graphe de WILLEE : les données correspondantes sont prises à minuit. Il faut donc attendre "deux minuits" pour que WILLEE ait pu faire la soustraction sur deux données prises à minuit et ainsi afficher la consommation de la journée correspondante.
+Il est normal que peu de choses apparaissent à ce stade : les données vont se remplir petit à petit. Le lendemain ce sera plus intéressant. 
 
 ![Image](screenshots/captureWILLEEFrontend.PNG?raw=true)
 
 ## Etape 4 : Faire fonctionner WILLEE avec *systemd* [optionnel]
 Pour améliorer les choses, on peut laisser le soin à "systemd" de les deux programmes de WILLEE, plutôt que de les lancer dans le shell. Après tout, systemd est le gestionanaire de service pour Linux.
-On va donc commencer par stopper le backend et le frontend de WILLEE. Taper `ps -a` pour trouver les scripts Python en cours d'exécution, et les arrêter avec `kill [PID]`.
+On va donc commencer par stopper le backend et le frontend de WILLEE. Taper `ps -a` pour trouver les scripts Python de WILLEE en cours d'exécution, et les arrêter avec `kill [PID]`.
 Ensuite, copier les fichiers `*.service` sous `/etc/systemd/system` :
 	
 	sudo cp /home/pi/WilleeProject/WILLEE/Backend.service /etc/systemd/system/.
 	sudo cp /home/pi/WilleeProject/WILLEE/Frontend.service /etc/systemd/system/.
-Comme le montrer la 7e ligne des fichiers `Backend.service` et `Backend.service`, ceux-ci lancent les scripts `backend.py` et `frontend.py` en supposant qu'ils sont enregistrés sous `/home/pi/WilleeProject/WILLEE/`. Il faut adapter le contenu de ces fichiers si vous n'utilisez pas la même organisation que ce tutoriel.
+Comme le montrer la 7e ligne des fichiers `Backend.service` et `Frontend.service`, ceux-ci lancent les scripts `backend.py` et `frontend.py` (respectivement) en supposant qu'ils sont enregistrés sous `/home/pi/WilleeProject/WILLEE/`. Il faut adapter le contenu de ces fichiers si vous n'utilisez pas la même organisation de fichiers que ce tutoriel.
 
 Autoriser les fichiers system à s'exécuter au démarrage :
 
