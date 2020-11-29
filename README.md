@@ -112,7 +112,7 @@ Vérifier l'état avec `status` :
 	sudo systemctl status Backend
 	sudo systemctl status Frontend
 
-Les fichiers deviennet alors des services, qui seront lancés au démarrage de la Raspberry. Il est aussi possible de lancer/arrêter/redémarrer les fichiers "à la main", en reprenant la commande ci-dessus et en remplaçant `status` par `start` ou `stop` ou `reload`.
+Les fichiers deviennent alors des services, qui seront lancés au démarrage de la Raspberry. Par défaut ils ne sont pas lancés à ce stade. Il est aussi possible de lancer/arrêter/redémarrer les services "à la main", en reprenant la commande ci-dessus et en remplaçant `status` par `start` ou `stop` ou `reload`.
 
 ## Sources et projets similaires
 A venir.
