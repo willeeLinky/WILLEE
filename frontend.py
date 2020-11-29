@@ -11,7 +11,7 @@ import os
 import sqlite3
 import plotly.graph_objects as go
 #import plotly.express as px
-import FeedDataBase as feedDB
+import backend as feedDB
 import base64
 
 ## CONSTANTES
