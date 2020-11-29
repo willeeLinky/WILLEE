@@ -211,8 +211,8 @@ def insertDataAndCommitTable_BASE_daily_mean_power(sqliteConnection, timestamp, 
 if __name__ == '__main__':
 
     ## CONSTANTES
-    database = os.path.dirname(os.path.realpath(__file__))+'/SQLite_Python3.db'
-    logFile = os.path.dirname(os.path.realpath(__file__))+'/logs_SQLite_Python.log'
+    database = os.path.dirname(os.path.realpath(__file__))+'/DataBase.db'
+    logFile = os.path.dirname(os.path.realpath(__file__))+'/logs_willee.log'
     logging.basicConfig(filename=logFile, level=logging.DEBUG, format='%(asctime)s %(message)s',
                         datefmt='%d/%m/%Y %H:%M:%S')
 
