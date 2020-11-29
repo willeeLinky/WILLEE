@@ -15,8 +15,8 @@ import backend as feedDB
 import base64
 
 ## CONSTANTES
-database = os.path.dirname(os.path.realpath(__file__))+'/SQLite_Python3.db'
-MaxRange = 10000
+database = os.path.dirname(os.path.realpath(__file__))+'/DataBase.db'
+MaxRange = 10000 #Echelle max en ordonnée (kW)
 
 
 def DateRangeForFig2_BASE_start_date(database):
