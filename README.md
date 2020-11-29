@@ -95,7 +95,24 @@ Il est normal que rien ne soit affiché sur le second graphe de WILLEE : les don
 ## Etape 4 : Faire fonctionner WILLEE avec *systemd* [optionnel]
 Pour améliorer les choses, on peut laisser le soin à "systemd" de les deux programmes de WILLEE, plutôt que de les lancer dans le shell. Après tout, systemd est le gestionanaire de service pour Linux.
 On va donc commencer par stopper le backend et le frontend de WILLEE. Taper `ps -a` pour trouver les scripts Python en cours d'exécution, et les arrêter avec `kill [PID]`.
-Ensuite, copier le fichier 
+Ensuite, copier les fichiers `*.service` sous `/etc/systemd/system` :
+	
+	sudo cp /home/pi/WilleeProject/WILLEE/Backend.service /etc/systemd/system/.
+	sudo cp /home/pi/WilleeProject/WILLEE/Frontend.service /etc/systemd/system/.
+Comme le montrer la 7e ligne des fichiers `Backend.service` et `Backend.service`, ceux-ci lancent les scripts `backend.py` et `frontend.py` en supposant qu'ils sont enregistrés sous `/home/pi/WilleeProject/WILLEE/`. Il faut adapter le contenu de ces fichiers si vous n'utilisez pas la même organisation que ce tutoriel.
+
+Autoriser les fichiers system à s'exécuter au démarrage :
+
+	sudo systemctl daemon-reload
+	sudo systemctl enable Backend
+	sudo systemctl enable Frontend
+
+Vérifier l'état avec `status` :
+
+	sudo systemctl status Backend
+	sudo systemctl status Frontend
+
+Les fichiers deviennet alors des services, qui seront lancés au démarrage de la Raspberry. Il est aussi possible de lancer/arrêter/redémarrer les fichiers "à la main", en reprenant la commande ci-dessus et en remplaçant `status` par `start` ou `stop` ou `reload`.
 
 ## Sources et projets similaires
 A venir.
