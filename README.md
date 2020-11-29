@@ -93,7 +93,9 @@ Il est normal que rien ne soit affiché sur le second graphe de WILLEE : les don
 ![Image](screenshots/captureWILLEEFrontend.PNG?raw=true)
 
 ## Etape 4 : Faire fonctionner WILLEE avec *systemd* [optionnel]
-A venir.
+Pour améliorer les choses, on peut laisser le soin à "systemd" de les deux programmes de WILLEE, plutôt que de les lancer dans le shell. Après tout, systemd est le gestionanaire de service pour Linux.
+On va donc commencer par stopper le backend et le frontend de WILLEE. Taper `ps -a` pour trouver les scripts Python en cours d'exécution, et les arrêter avec `kill [PID]`.
+Ensuite, copier le fichier 
 
 ## Sources et projets similaires
 A venir.
