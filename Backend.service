@@ -1,0 +1,11 @@
+[Unit]
+Description=WILLEE : Web Inerface for LINKY Live Extraction and Exploitation
+After=network.target
+
+[Service]
+Type=simple
+ExecStart= /usr/bin/python3 "/home/pi/Linky1011/Link/AppFlaskAndFeedDB_separate/FeedDataBase.py"
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
