@@ -350,4 +350,4 @@ def EstimateConsoEuro(start_date,end_date,value):
 
 if __name__ == '__main__':
     # database = os.path.dirname(os.path.realpath(__file__))+'/SQLite_Python3_22112020.db'
-    app.run_server(debug=False, host='0.0.0.0', port=8051)
+    app.run_server(debug=False, host='0.0.0.0', port=8050)
