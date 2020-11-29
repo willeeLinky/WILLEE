@@ -4,7 +4,11 @@
 
 WILLEE est un programme simple et gratuit, qui collecte et affiche en temps réel la consommation de votre compteur électrique Linky.
 Voilà par exemple <a href="./screenshots/captureWILLEEFrontend.PNG" target="_top">ce qu'il affiche</a>.
-Les figures sont modulables (on peut cliquer, zoomer...).
+* La puissance apparente est affichée en temps réel et rechargée automatiquement.
+* L'historique de la consommation de chaque jour est accessible par le biais du calendrier sur la gauche. Les mesures sont prises toutes les deux secondes.
+* La figure en bas de la page montre la consommation globale pour une journée donnée. La barre rouge indique le jour en cours pour la figure au-dessus. Il est possible d'estimer sa consommation sur une période donnée grâce aux calendriers de sélection en bas à droite, et d'entrer le prix du kWh.
+* Les figures sont modulables (on peut cliquer, zoomer...).
+
 
 WILLEE est codé en langage Python et hébergé sur une carte Raspberry Pi.
 
