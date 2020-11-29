@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart= /usr/bin/python3 "/home/pi/Linky1011/Link/AppFlaskAndFeedDB_separate/FeedDataBase.py"
+ExecStart= /usr/bin/python3 "/home/pi/WilleeProject/WILLEE/backend.py"
 Restart=on-abort
 
 [Install]
