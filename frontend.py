@@ -52,7 +52,7 @@ def serve_layout():
                 html.A([
                     html.Img(src='data:image/png;base64,{}'.format(base64.b64encode(
                         open(os.path.dirname(os.path.realpath(__file__)) + '/logos/logoGitHub.png', 'rb').read()).decode('ascii')), alt=':(', style={'height': '50px', 'margin-top': '0px', 'margin-left': '0px', 'position': 'relative', 'border': '1px solid white'}),
-                    ], style={'textAlign': 'center', 'border': '3px solid white', "text-decoration":"none", 'margin-top': '0px', 'margin-left': '35px'}, href='', target="_blank"),
+                    ], style={'textAlign': 'center', 'border': '3px solid white', "text-decoration":"none", 'margin-top': '0px', 'margin-left': '35px'}, href='https://github.com/willeeLinky/WILLEE', target="_blank"),
                 # html.A([
                 #     html.H1(children='', style={'margin-top': '0px', 'margin-left': '0px', 'color':'black'} ),
                 #     ], className='four columns', style={'textAlign': 'center', 'border': '3px solid white', "text-decoration":"none", 'margin-top': '0px', 'margin-left': '0px'}, href='', target="_blank")
