@@ -1,5 +1,5 @@
 [Unit]
-Description=WILLEE : Web Inerface for LINKY Live Extraction and Exploitation
+Description=WILLEE : Web Interface for LINKY Live Extraction and Exploitation (Frontend)
 After=network.target
 
 [Service]
