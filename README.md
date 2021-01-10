@@ -119,6 +119,12 @@ Vérifier l'état avec `status` :
 Les fichiers deviennent alors des services, qui seront lancés au démarrage de la Raspberry. Par défaut ils ne sont pas lancés à ce stade. Il est aussi possible de lancer/arrêter/redémarrer les services "à la main", en reprenant la commande ci-dessus et en remplaçant `status` par `start` ou `stop` ou `reload`.
 
 ## Sources et projets similaires
-A venir.
-    
-[Editeur markdown](https://stackedit.io/app#)
+* https://www.jonathandupre.fr/articles/index.php?url=/24-logiciel-scripts/208-suivi-consommation-electrique-compteur-edf-linky-avec-raspberry-pi-zero-w/
+* https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3-4/
+* https://www.journaldulapin.com/2016/02/25/raspberry-pi-teleinfo/
+* https://www.magdiblog.fr/gpio/teleinfo-edf-suivi-conso-de-votre-compteur-electrique/
+* https://hallard.me/pitinfov12/
+* https://www.magdiblog.fr/category/boa-pi-timelapse/
+* https://www.magdiblog.fr/category/boa-pi-drone/
+* https://www.tindie.com/products/Hallard/pitinfo/
+
