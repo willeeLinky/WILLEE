@@ -88,7 +88,7 @@ Lancer le *frontend* qui génère la page web :
 	
 	sudo python3 frontend.py & 
 ## Et voilà ! 
-WILLEE va accumuler des donnée à raison d'environ ~600Mo/an.
+WILLEE va accumuler des donnée à raison d'environ ~400Mo/an.
 Vous pouvez visualiser la page web depuis la Raspberry Pi ou un autre équipement connecté au réseau local en tapant "*[IP de la Raspberry Pi]:8050*" dans un navigateur.
 Pour connaitre l'IP : `ip addr` dans l'invité de commande, puis chercher quelque chose du genre "*inet 192.168.1.2/24*".
 
