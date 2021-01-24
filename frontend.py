@@ -45,7 +45,7 @@ def serve_layout():
             # middle column
             html.A([
                 #html.Div(id='output-container-date-picker-single'),
-                html.H1(children='WILLEEE', style={'margin-top': '0px', 'margin-left': '0px','margin-bottom': '0px', 'margin-right': '0px', 'color': 'black', 'fontsize':'5'}),
+                html.H1(children='WILLEE', style={'margin-top': '0px', 'margin-left': '0px','margin-bottom': '0px', 'margin-right': '0px', 'color': 'black', 'fontsize':'5'}),
                 # html.A([
                 #     html.H1(children='', style={'margin-top': '0px', 'margin-left': '0px', 'color':'black'} ),
                 #     ], className='four columns', style={'textAlign': 'left', 'border': '3px solid white', "text-decoration":"none", 'margin-top': '0px', 'margin-left': '0px'}, href='/', target="_blank"),
