@@ -45,7 +45,7 @@ def serve_layout():
             # middle column
             html.A([
                 #html.Div(id='output-container-date-picker-single'),
-                html.H1(children='WILLEE', style={'margin-top': '0px', 'margin-left': '0px','margin-bottom': '0px', 'margin-right': '0px', 'color': 'black', 'fontsize':'5'}),
+                html.H1(children='WILLEEE', style={'margin-top': '0px', 'margin-left': '0px','margin-bottom': '0px', 'margin-right': '0px', 'color': 'black', 'fontsize':'5'}),
                 # html.A([
                 #     html.H1(children='', style={'margin-top': '0px', 'margin-left': '0px', 'color':'black'} ),
                 #     ], className='four columns', style={'textAlign': 'left', 'border': '3px solid white', "text-decoration":"none", 'margin-top': '0px', 'margin-left': '0px'}, href='/', target="_blank"),
@@ -105,7 +105,12 @@ def serve_layout():
                     id='powerVsTime_figure',
                     #figure=fig,
                     style = {'margin-top': '0px'},
-                )
+                ),
+                dcc.Interval(
+                    id='intervalGraphPowerVsTime',
+                    interval=1*60*1000, # in milliseconds
+                    n_intervals=0
+                    ),
             ], className='ten columns', style={'border': '3px solid white', 'margin-left': '0%', 'margin-right': '0%'})
         ], className='row', style={'border': '3px solid white', 'margin-left': '0%', 'margin-right': '0%'}),
         html.Hr(), # a simple grey line
@@ -209,8 +214,9 @@ def update_output(n):
     Output('powerVsTime_figure', 'figure'),
     [Input('ChoixDateFig1', 'date'),
      Input('LinOrLogButtonForFig1', 'value'),
-     Input('HighLowSamplingButtonForFig1', 'value')])
-def update_figure_powerVsTime(date,LinOrLogButtonForFig1,HighLowSamplingButtonForFig1):
+     Input('HighLowSamplingButtonForFig1', 'value'),
+     Input('intervalGraphPowerVsTime', 'n_intervals'),])
+def update_figure_powerVsTime(date,LinOrLogButtonForFig1,HighLowSamplingButtonForFig1, n):
     decimatioNfactor = 30  # 15 => 30s/pt   30 => 1min/pt
     sqliteConnection = feedDB.connectToDatabase(database)
     selectedDay = str("day_" + str(date).replace("-", "_"))

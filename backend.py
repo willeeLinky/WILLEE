@@ -59,7 +59,7 @@ def connectToDatabase(database):
 
 def insertDataAndCommit(sqliteConnection, tableName, tuple):  # tuple is a value of power. Ex : (450,)
     """insert data in the database detail"""
-    sqlite_insert_with_param = "INSERT INTO '" + tableName + "' ('joiningDate','power')  VALUES (strftime('%s','now'), ?);"
+    sqlite_insert_with_param = "INSERT OR IGNORE INTO '" + tableName + "' ('joiningDate','power')  VALUES (strftime('%s','now'), ?);"
     cursor = sqliteConnection.cursor()
     cursor.execute(sqlite_insert_with_param, tuple)
     for i in range(0,50): # retries to commit if it fails
