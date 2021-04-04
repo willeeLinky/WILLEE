@@ -1,0 +1,199 @@
+29/11/2020 12:29:49 Launching backend.py
+29/11/2020 12:30:43 Launching backend.py
+29/11/2020 12:32:49 Launching backend.py
+29/11/2020 12:41:01 sqlite3.OperationalError: database is locked ; Attempt: 2
+30/11/2020 00:00:00 Table does not exists. Creating new called day_2020_11_30
+01/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_01
+01/12/2020 21:17:39 sqlite3.OperationalError: database is locked ; Attempt: 2
+02/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_02
+03/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_03
+03/12/2020 01:57:37 ErrorInRead
+03/12/2020 01:57:37 Empty data. Need to read serial again.
+03/12/2020 04:06:34 ErrorInRead
+03/12/2020 04:06:34 Empty data. Need to read serial again.
+03/12/2020 15:47:33 ErrorInRead
+03/12/2020 15:47:33 Empty data. Need to read serial again.
+03/12/2020 22:17:13 Launching backend.py
+03/12/2020 22:50:49 Launching backend.py
+04/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_04
+04/12/2020 23:11:16 ErrorInRead
+04/12/2020 23:11:16 Empty data. Need to read serial again.
+05/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_05
+06/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_06
+06/12/2020 13:17:30 Launching backend.py
+06/12/2020 20:54:20 sqlite3.OperationalError: database is locked ; Attempt: 2
+07/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_07
+08/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_08
+09/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_09
+10/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_10
+11/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_11
+12/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_12
+13/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_13
+14/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_14
+14/12/2020 14:22:24 ErrorInRead
+14/12/2020 14:22:24 Empty data. Need to read serial again.
+15/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_15
+16/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_16
+17/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_17
+18/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_18
+19/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_19
+20/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_20
+21/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_21
+22/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_22
+23/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_23
+24/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_24
+25/12/2020 00:00:00 Table does not exists. Creating new called day_2020_12_25
+26/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_26
+27/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_27
+28/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_28
+29/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_29
+30/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_30
+31/12/2020 00:00:01 Table does not exists. Creating new called day_2020_12_31
+01/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_01
+02/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_02
+02/01/2021 13:07:59 ErrorInRead
+02/01/2021 13:07:59 Empty data. Need to read serial again.
+03/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_03
+04/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_04
+04/01/2021 14:12:33 sqlite3.OperationalError: database is locked ; Attempt: 2
+05/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_05
+06/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_06
+07/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_07
+08/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_08
+09/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_09
+09/01/2021 11:50:57 Launching backend.py
+10/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_10
+10/01/2021 16:44:08 Launching backend.py
+11/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_11
+12/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_12
+13/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_13
+14/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_14
+15/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_15
+15/01/2021 21:48:59 ErrorInRead
+15/01/2021 21:48:59 Empty data. Need to read serial again.
+16/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_16
+17/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_17
+18/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_18
+19/01/2021 00:00:02 Table does not exists. Creating new called day_2021_01_19
+20/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_20
+21/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_21
+22/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_22
+23/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_23
+24/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_24
+24/01/2021 10:13:07 Launching backend.py
+24/01/2021 10:49:33 Launching backend.py
+25/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_25
+26/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_26
+26/01/2021 03:52:43 ErrorInRead
+26/01/2021 03:52:43 Empty data. Need to read serial again.
+26/01/2021 14:21:47 sqlite3.OperationalError: database is locked ; Attempt: 2
+27/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_27
+28/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_28
+29/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_29
+30/01/2021 00:00:01 Table does not exists. Creating new called day_2021_01_30
+31/01/2021 00:00:00 Table does not exists. Creating new called day_2021_01_31
+01/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_01
+02/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_02
+03/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_03
+04/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_04
+05/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_05
+06/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_06
+07/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_07
+08/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_08
+09/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_09
+10/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_10
+10/02/2021 18:04:09 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:04:15 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:04:20 sqlite3.OperationalError: database is locked ; Attempt: 4
+10/02/2021 18:04:26 sqlite3.OperationalError: database is locked ; Attempt: 5
+10/02/2021 18:04:31 sqlite3.OperationalError: database is locked ; Attempt: 6
+10/02/2021 18:04:37 sqlite3.OperationalError: database is locked ; Attempt: 7
+10/02/2021 18:04:53 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:05:12 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:05:26 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:05:32 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:05:37 sqlite3.OperationalError: database is locked ; Attempt: 4
+10/02/2021 18:05:53 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:06:25 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:06:30 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:06:54 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:07:00 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:07:55 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:08:56 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:09:02 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:09:29 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:09:35 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:09:55 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:10:00 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:10:57 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:11:02 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:11:25 sqlite3.OperationalError: database is locked ; Attempt: 2
+10/02/2021 18:11:30 sqlite3.OperationalError: database is locked ; Attempt: 3
+10/02/2021 18:11:56 sqlite3.OperationalError: database is locked ; Attempt: 2
+11/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_11
+12/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_12
+13/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_13
+14/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_14
+15/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_15
+15/02/2021 18:47:48 sqlite3.OperationalError: database is locked ; Attempt: 2
+16/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_16
+17/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_17
+18/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_18
+19/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_19
+20/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_20
+21/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_21
+22/02/2021 00:00:02 Table does not exists. Creating new called day_2021_02_22
+23/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_23
+24/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_24
+25/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_25
+26/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_26
+26/02/2021 16:39:57 sqlite3.OperationalError: database is locked ; Attempt: 2
+26/02/2021 16:40:02 sqlite3.OperationalError: database is locked ; Attempt: 3
+26/02/2021 16:40:08 sqlite3.OperationalError: database is locked ; Attempt: 4
+26/02/2021 16:40:57 sqlite3.OperationalError: database is locked ; Attempt: 2
+27/02/2021 00:00:01 Table does not exists. Creating new called day_2021_02_27
+27/02/2021 05:11:34 ErrorInRead
+27/02/2021 05:11:34 Empty data. Need to read serial again.
+28/02/2021 00:00:00 Table does not exists. Creating new called day_2021_02_28
+01/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_01
+02/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_02
+03/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_03
+04/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_04
+04/03/2021 15:03:20 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/03/2021 15:04:07 sqlite3.OperationalError: database is locked ; Attempt: 2
+05/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_05
+06/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_06
+07/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_07
+08/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_08
+09/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_09
+10/03/2021 00:00:04 Table does not exists. Creating new called day_2021_03_10
+11/03/2021 00:00:02 Table does not exists. Creating new called day_2021_03_11
+12/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_12
+13/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_13
+14/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_14
+15/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_15
+16/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_16
+17/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_17
+18/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_18
+19/03/2021 00:00:02 Table does not exists. Creating new called day_2021_03_19
+20/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_20
+20/03/2021 22:22:44 sqlite3.OperationalError: database is locked ; Attempt: 2
+21/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_21
+22/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_22
+23/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_23
+24/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_24
+25/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_25
+26/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_26
+27/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_27
+28/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_28
+29/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_29
+29/03/2021 11:25:24 ErrorInRead
+29/03/2021 11:25:24 Empty data. Need to read serial again.
+30/03/2021 00:00:01 Table does not exists. Creating new called day_2021_03_30
+31/03/2021 00:00:00 Table does not exists. Creating new called day_2021_03_31
+01/04/2021 00:00:00 Table does not exists. Creating new called day_2021_04_01
+02/04/2021 00:00:01 Table does not exists. Creating new called day_2021_04_02
+03/04/2021 00:00:01 Table does not exists. Creating new called day_2021_04_03
+04/04/2021 00:00:01 Table does not exists. Creating new called day_2021_04_04
+04/04/2021 17:40:41 ErrorInRead
+04/04/2021 17:40:41 Empty data. Need to read serial again.
