@@ -281,9 +281,6 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
     end_date_datetimeFormat = dt(int(end_date[0:4]), int(end_date[5:7]), int(end_date[8:10]))
     min_range = 0
     max_range = 30
-
-
-
     def moyenne_glissante(valeurs, intervalle):
         indice_debut = (intervalle - 1) // 2
         liste_moyennes = [sum(valeurs[i - indice_debut:i + indice_debut + 1]) / intervalle for i in
@@ -355,10 +352,6 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
                 xaxis_title="Jour",
                 yaxis_title="Energie quotidienne consommée (kWh)",
             )
-
-
-
-
     feedDB.closeDataBase(sqliteConnection)
     return fig
 
