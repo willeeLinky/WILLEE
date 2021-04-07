@@ -197,3 +197,14 @@
 04/04/2021 00:00:01 Table does not exists. Creating new called day_2021_04_04
 04/04/2021 17:40:41 ErrorInRead
 04/04/2021 17:40:41 Empty data. Need to read serial again.
+04/04/2021 19:51:30 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:52:30 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:53:28 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:55:29 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:56:31 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:57:29 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:58:28 sqlite3.OperationalError: database is locked ; Attempt: 2
+04/04/2021 19:59:29 sqlite3.OperationalError: database is locked ; Attempt: 2
+05/04/2021 00:00:01 Table does not exists. Creating new called day_2021_04_05
+06/04/2021 00:00:00 Table does not exists. Creating new called day_2021_04_06
+07/04/2021 00:00:01 Table does not exists. Creating new called day_2021_04_07
