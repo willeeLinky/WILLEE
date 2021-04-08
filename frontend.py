@@ -156,7 +156,8 @@ def serve_layout():
                             min=1,
                             max=31,
                             step=2,
-                            marks={2*i-1 : str(2*i-1)+'j' for i in range(17)},
+                            marks={1:"1j",3:"3j",7:"7j",11:"11j",15:"15j",19:"19j",23:"23j",27:"27j",31:"31j"},
+                            #marks={2*i-1 : str(2*i-1)+'j' for i in range(17)},
                             value=1
                         )
                     ], className='three columns', style={'border': '3px solid white', 'margin-left': '0%', 'margin-right': '0%', 'width':'26%'}
