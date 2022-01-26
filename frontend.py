@@ -387,16 +387,12 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
                 prev_month = curr_month
         x_month.append(dt(year=prev_year, month=prev_month, day=15))
         y_month.append(conso_month)
-        if start_date_datetimeFormat.day < 29:
-            TD = 28
-        else:
-            TD = 35
         if EuroOrkWh == '€':
             coeff = float(InputPrixkWh)
             y_month = [float("%.2f" % float(number * coeff)) for number in y_month]
             fig = go.Figure([go.Bar(x=x_month, y=y_month, marker_color='blue')])
             fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=TD), end_date_datetimeFormat],
+                xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
                 yaxis_range=[0, (max(y_month) // 100 + 1) * 100],
                 xaxis_title="Mois",
                 yaxis_title="Coût mensuel (€)",
@@ -405,13 +401,12 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
         else:
             fig = go.Figure([go.Bar(x=x_month, y=y_month, marker_color='blue')])
             fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=TD), end_date_datetimeFormat],
+                xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
                 yaxis_range=[0, (max(y_month)//100+1)*100],
                 xaxis_title="Mois",
                 yaxis_title="Energie mensuellement consommée (kWh)",
             )
             fig.update_xaxes(showgrid=True, ticklabelmode="period")
-    ###################################
     if joursmoisannee == 'Annuel':
         prev_year = abscisse[0].year
         prev_month = abscisse[0].month
@@ -429,7 +424,6 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
                 prev_year = curr_year
         x_year.append(dt(year=prev_year, month=6, day=1))
         y_year.append(conso_year)
-        # fig = go.Figure([go.Bar(x=x_year, y=y_year, marker_color='blue')])
         if EuroOrkWh == '€':
             coeff = float(InputPrixkWh)
             y_year = [float("%.2f" % float(number * coeff)) for number in y_year]
@@ -446,7 +440,6 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
                 xaxis_title="Année",
                 yaxis_title="Energie annuellement consommée (kWh)",
             )
-    ###################################
     return fig
 
 @app.callback(
