@@ -125,7 +125,6 @@ def serve_layout():
                         #figure=fig_mean_power
                     )], className='nine columns', style={'border': '3px solid white'}
                 ),
-                # aaaaa(), #########################
                 html.Div([
                     dcc.RadioItems(
                         id='JourMoisAnnee',
@@ -361,11 +360,8 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
                 fig = go.Figure([go.Bar(x=abscisse, y=ordonnee, marker_color=colors)])
                 fig.update_layout(
                     xaxis_range=[start_date_datetimeFormat - timedelta(days=1), end_date_datetimeFormat + timedelta(days=1)],
-<<<<<<< HEAD
                     yaxis_range=[min_range, max_range],
-=======
                     yaxis_range=[min_range, max_range*coeff],
->>>>>>> d0c9985ff562941843d8d00a3722f83f76fc0854
                     xaxis_title="Jour",
                     # yaxis_title="Energie quotidienne consommée (kWh)",
                 )
@@ -413,11 +409,8 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
             fig.update_xaxes(showgrid=True, ticklabelmode="period")
     if joursmoisannee == 'Annuel':
         prev_year = abscisse[0].year
-<<<<<<< HEAD
 #        prev_month = abscisse[0].month
-=======
         prev_month = abscisse[0].month
->>>>>>> d0c9985ff562941843d8d00a3722f83f76fc0854
         x_year = []
         y_year = []
         conso_year = 0
@@ -427,11 +420,8 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
                 conso_year = conso_year + curr_conso
             else:
                 y_year.append(conso_year)
-<<<<<<< HEAD
                 conso_year = curr_conso
-=======
                 conso_year = curr_year
->>>>>>> d0c9985ff562941843d8d00a3722f83f76fc0854
                 x_year.append(dt(year=prev_year, month=6, day=1))
                 prev_year = curr_year
         x_year.append(dt(year=prev_year, month=6, day=1))
