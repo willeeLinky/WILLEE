@@ -26,6 +26,7 @@ def DateRangeForFig2_BASE_start_date(database):
     records.sort()
     return feedDB.convertFromTimestampToDatetime(records[0][0])
 
+
 def serve_layout():
     layout = html.Div([
         # first line
@@ -124,7 +125,15 @@ def serve_layout():
                         #figure=fig_mean_power
                     )], className='nine columns', style={'border': '3px solid white'}
                 ),
+                # aaaaa(), #########################
                 html.Div([
+                    dcc.RadioItems(
+                        id='JourMoisAnnee',
+                        options=[{'label': i, 'value': i} for i in ['Quotidien', 'Mensuel','Annuel']],
+                        value='Quotidien',
+                        labelStyle={'display': 'inline-block'}
+                    ),
+                    # html.Div([dayMonthYearFront()]), #######################################################
                     html.H6(children='Période :'),
                     html.Div([
                         dcc.DatePickerRange( #https://dash.plotly.com/dash-core-components/datepickerrange
@@ -158,19 +167,20 @@ def serve_layout():
                             step=2,
                             marks={1:"1j",3:"3j",7:"7j",11:"11j",15:"15j",19:"19j",23:"23j",27:"27j",31:"31j"},
                             #marks={2*i-1 : str(2*i-1)+'j' for i in range(17)},
-                            value=3
+                            value=1
                         )
                     ], className='three columns', style={'border': '3px solid white', 'margin-left': '0%', 'margin-right': '0%', 'width':'26%'}
                 ),
             ], className='row', style={'border': '3px solid white'}),
         ]),
-        html.Hr(),
+        html.Hr(),  # a simple grey line
     ])
     return layout
 
 app = dash.Dash(__name__ )
 app.layout = serve_layout
 app.title = 'WILLEE'
+
 
 
 @app.callback(
@@ -263,8 +273,9 @@ def update_figure_powerVsTime(date,LinOrLogButtonForFig1,HighLowSamplingButtonFo
      Input('EuroOrkWhButtonForFig2_BASE', 'value'),
      Input('InputPrixkWh_BASE', 'value'),
      Input('choixLissage', 'value'),
-     Input('ChoixDateFig1', 'date')])
-def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh, Lissage, dateCalendrierFig1):
+     Input('ChoixDateFig1', 'date'),
+     Input('JourMoisAnnee', 'value')])
+def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh, Lissage, dateCalendrierFig1, joursmoisannee):
     tableName = "BASE_daily_mean_power"
     tableCurrentData = "CurrentData"
     sqliteConnection = feedDB.connectToDatabase(database)
@@ -300,60 +311,135 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
             liste_moyennes.insert(len(liste_moyennes) - k, value2)
         return liste_moyennes
 
-    if float(Lissage) > 1:
-        courbeLissee = moyenne_glissante(ordonnee, Lissage)
+    if joursmoisannee == 'Quotidien':
+        if float(Lissage) > 1:
+            courbeLissee = moyenne_glissante(ordonnee, Lissage)
+            if EuroOrkWh == '€':
+                coeff = float(InputPrixkWh)
+                ordonnee = [float("%.2f" % float(number * coeff)) for number in ordonnee]
+                trace2 = go.Scatter(x=abscisse, y=[el*coeff for el in courbeLissee], name='Lissage', marker_color="blue")
+                colors = ["rgb(148,185,243)"] * len(ordonnee)
+                colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
+                fig = go.Figure([ go.Bar(x=abscisse, y=ordonnee, marker_color=colors), trace2 ])
+                fig.update_layout(
+                    xaxis_range=[start_date_datetimeFormat - timedelta(days=1),
+                                 end_date_datetimeFormat + timedelta(days=1)],
+                    yaxis_range=[min_range, max_range * coeff],
+                    xaxis_title="Jour",
+                    yaxis_title="Coût quotidien (€)",
+                    showlegend=False,
+                )
+            else:
+                trace2 = go.Scatter(x=abscisse, y=courbeLissee, name='Lissage', marker_color="blue")
+                colors = ["rgb(148,185,243)"] * len(ordonnee)
+                colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
+                fig = go.Figure([ go.Bar(x=abscisse, y=ordonnee, marker_color=colors), trace2 ])
+                fig.update_layout(
+                    xaxis_range=[start_date_datetimeFormat - timedelta(days=1),
+                                 end_date_datetimeFormat + timedelta(days=1)],
+                    yaxis_range=[min_range, max_range],
+                    xaxis_title="Jour",
+                    yaxis_title="Energie quotidienne consommée (kWh)",
+                    showlegend=False,
+                )
+        else:
+            if EuroOrkWh=='€':
+                coeff=float(InputPrixkWh)
+                ordonnee = [float("%.2f" % float(number*coeff)) for number in ordonnee]
+                colors = ['blue', ] * len(ordonnee)
+                colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
+                fig = go.Figure([go.Bar(x=abscisse, y=ordonnee, marker_color=colors)])
+                fig.update_layout(
+                    xaxis_range=[start_date_datetimeFormat - timedelta(days=1), end_date_datetimeFormat + timedelta(days=1)],
+                    yaxis_range=[min_range, max_range*coeff],
+                    xaxis_title="Jour",
+                    yaxis_title="Coût quotidien (€)",
+                )
+            else:
+                colors = ['blue', ] * len(ordonnee)
+                colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
+                fig = go.Figure([go.Bar(x=abscisse, y=ordonnee, marker_color=colors)])
+                fig.update_layout(
+                    xaxis_range=[start_date_datetimeFormat - timedelta(days=1), end_date_datetimeFormat + timedelta(days=1)],
+                    yaxis_range=[min_range, max_range],
+                    xaxis_title="Jour",
+                    # yaxis_title="Energie quotidienne consommée (kWh)",
+                )
+    feedDB.closeDataBase(sqliteConnection)
+
+    ###################################
+    if joursmoisannee == 'Mensuel':
+        prev_year = abscisse[0].year
+        prev_month = abscisse[0].month
+        x_month = []
+        y_month = []
+        conso_month = 0
+        for curr_day, curr_conso in zip(abscisse, ordonnee):
+            curr_year = curr_day.year
+            curr_month = curr_day.month
+            if (curr_year==prev_year) and (prev_month==curr_month):
+                conso_month = conso_month + curr_conso
+            else:
+                y_month.append(conso_month)
+                conso_month = curr_conso
+                x_month.append(dt(year=prev_year, month=prev_month, day=15))
+                prev_year = curr_year
+                prev_month = curr_month
+        x_month.append(dt(year=prev_year, month=prev_month, day=15))
+        y_month.append(conso_month)
         if EuroOrkWh == '€':
             coeff = float(InputPrixkWh)
-            ordonnee = [float("%.2f" % float(number * coeff)) for number in ordonnee]
-            trace2 = go.Scatter(x=abscisse, y=[el*coeff for el in courbeLissee], name='Lissage', marker_color="blue")
-            colors = ["rgb(148,185,243)"] * len(ordonnee)
-            colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
-            fig = go.Figure([ go.Bar(x=abscisse, y=ordonnee, marker_color=colors), trace2 ])
+            y_month = [float("%.2f" % float(number * coeff)) for number in y_month]
+            fig = go.Figure([go.Bar(x=x_month, y=y_month, marker_color='blue')])
             fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=1),
-                             end_date_datetimeFormat + timedelta(days=1)],
-                yaxis_range=[min_range, max_range * coeff],
-                xaxis_title="Jour",
-                yaxis_title="Coût quotidien (€)",
-                showlegend=False,
+                xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
+                yaxis_range=[0, (max(y_month) // 100 + 1) * 100],
+                xaxis_title="Mois",
+                yaxis_title="Coût mensuel (€)",
+            )
+            fig.update_xaxes(showgrid=True, ticklabelmode="period")
+        else:
+            fig = go.Figure([go.Bar(x=x_month, y=y_month, marker_color='blue')])
+            fig.update_layout(
+                xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
+                yaxis_range=[0, (max(y_month)//100+1)*100],
+                xaxis_title="Mois",
+                yaxis_title="Energie mensuellement consommée (kWh)",
+            )
+            fig.update_xaxes(showgrid=True, ticklabelmode="period")
+    if joursmoisannee == 'Annuel':
+        prev_year = abscisse[0].year
+#        prev_month = abscisse[0].month
+        x_year = []
+        y_year = []
+        conso_year = 0
+        for curr_day, curr_conso in zip(abscisse, ordonnee):
+            curr_year = curr_day.year
+            if (curr_year==prev_year):
+                conso_year = conso_year + curr_conso
+            else:
+                y_year.append(conso_year)
+                conso_year = curr_conso
+                x_year.append(dt(year=prev_year, month=6, day=1))
+                prev_year = curr_year
+        x_year.append(dt(year=prev_year, month=6, day=1))
+        y_year.append(conso_year)
+        if EuroOrkWh == '€':
+            coeff = float(InputPrixkWh)
+            y_year = [float("%.2f" % float(number * coeff)) for number in y_year]
+            fig = go.Figure([go.Bar(x=x_year, y=y_year, marker_color='blue')])
+            fig.update_layout(
+                yaxis_range=[0, (max(y_year) // 1000 + 1) * 1000],
+                xaxis_title="Année",
+                yaxis_title="Coût annuel (€)",
             )
         else:
-            trace2 = go.Scatter(x=abscisse, y=courbeLissee, name='Lissage', marker_color="blue")
-            colors = ["rgb(148,185,243)"] * len(ordonnee)
-            colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
-            fig = go.Figure([ go.Bar(x=abscisse, y=ordonnee, marker_color=colors), trace2 ])
+            fig = go.Figure([go.Bar(x=x_year, y=y_year, marker_color='blue')])
             fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=1),
-                             end_date_datetimeFormat + timedelta(days=1)],
-                yaxis_range=[min_range, max_range],
-                xaxis_title="Jour",
-                yaxis_title="Energie quotidienne consommée (kWh)",
-                showlegend=False,
+                yaxis_range=[0, (max(y_year)//1000+1)*1000],
+                xaxis_title="Année",
+                yaxis_title="Energie annuellement consommée (kWh)",
             )
-    else:
-        if EuroOrkWh=='€':
-            coeff=float(InputPrixkWh)
-            ordonnee = [float("%.2f" % float(number*coeff)) for number in ordonnee]
-            colors = ['blue', ] * len(ordonnee)
-            colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
-            fig = go.Figure([go.Bar(x=abscisse, y=ordonnee, marker_color=colors)])
-            fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=1), end_date_datetimeFormat + timedelta(days=1)],
-                yaxis_range=[min_range, max_range*coeff],
-                xaxis_title="Jour",
-                yaxis_title="Coût quotidien (€)",
-            )
-        else:
-            colors = ['blue', ] * len(ordonnee)
-            colors[feedDB.IndexOfClosestDate(abscisse, dateCalendrierFig1)] = 'red'
-            fig = go.Figure([go.Bar(x=abscisse, y=ordonnee, marker_color=colors)])
-            fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=1), end_date_datetimeFormat + timedelta(days=1)],
-                yaxis_range=[min_range, max_range],
-                xaxis_title="Jour",
-                yaxis_title="Energie quotidienne consommée (kWh)",
-            )
-    feedDB.closeDataBase(sqliteConnection)
     return fig
 
 @app.callback(
