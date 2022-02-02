@@ -392,8 +392,8 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
             y_month = [float("%.2f" % float(number * coeff)) for number in y_month]
             fig = go.Figure([go.Bar(x=x_month, y=y_month, marker_color='blue')])
             fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
-                yaxis_range=[0, (max(y_month) // 100 + 1) * 100],
+                # xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
+                # yaxis_range=[0, (max(y_month) // 100 + 1) * 100],
                 xaxis_title="Mois",
                 yaxis_title="Coût mensuel (€)",
             )
@@ -401,8 +401,8 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
         else:
             fig = go.Figure([go.Bar(x=x_month, y=y_month, marker_color='blue')])
             fig.update_layout(
-                xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
-                yaxis_range=[0, (max(y_month)//100+1)*100],
+                # xaxis_range=[start_date_datetimeFormat - timedelta(days=0), end_date_datetimeFormat],
+                # yaxis_range=[0, (max(y_month)//100+1)*100],
                 xaxis_title="Mois",
                 yaxis_title="Energie mensuellement consommée (kWh)",
             )
@@ -430,7 +430,7 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
             y_year = [int(number * coeff) for number in y_year]
             fig = go.Figure([go.Bar(x=x_year, y=y_year, marker_color='blue')])
             fig.update_layout(
-                yaxis_range=[0, (max(y_year) // 1000 + 1) * 1000],
+                # yaxis_range=[0, (max(y_year) // 1000 + 1) * 1000],
                 xaxis_title="Année",
                 yaxis_title="Coût annuel (€)",
             )
@@ -438,7 +438,7 @@ def update_mean_power_figure_BASE(start_date, end_date, EuroOrkWh, InputPrixkWh,
             y_year=[int(el) for el in y_year]
             fig = go.Figure([go.Bar(x=x_year, y=y_year, marker_color='blue')])
             fig.update_layout(
-                yaxis_range=[0, (max(y_year)//1000+1)*1000],
+                # yaxis_range=[0, (max(y_year)//1000+1)*1000],
                 xaxis_title="Année",
                 yaxis_title="Energie annuellement consommée (kWh)",
             )
