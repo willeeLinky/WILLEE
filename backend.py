@@ -75,6 +75,8 @@ def insertDataAndCommit(sqliteConnection, tableName, tuple):  # tuple is a value
 def readTable(sqliteConnection, tableName):
     """read the database"""
     sqlite_select_query = "SELECT * FROM " + tableName
+    if tableName=="BASE_daily_mean_power":
+        sqlite_select_query = "SELECT instant, power FROM " + tableName + " ORDER BY instant"
     cursor = sqliteConnection.cursor()
     cursor = cursor.execute(sqlite_select_query)
     return cursor.fetchall()
